@@ -1,0 +1,9 @@
+$NEO4J_HOME/bin/neo4j-import
+--into /Users/zion/neo4j-3.3.3/data/yelp.db \
+--id-type string \
+--nodes:user /Users/zion/neo4j-3.3.3/import/users.csv \
+--nodes:address /Users/zion/neo4j-3.3.3/import/addresses.csv \
+--nodes:job /Users/zion/neo4j-3.3.3/import/jobs.csv \
+
+--relationships:HAS_JOB /Users/zion/neo4j-3.3.3/import/users-jobs.csv \
+--relationships:LIVES_AT /Users/zion/neo4j-3.3.3/import/users-addresses.csv

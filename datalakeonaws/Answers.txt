@@ -1,0 +1,47 @@
+1. AWS Services used to implement Data Lake
+    - S3 (Storage)
+    - KMS (encrypt data at rest)
+    - Cloudfront (used as a CDN to reduce webpage load times for any end-user facing data lake web applications)
+    - Kinesis Firehouse
+    - Active Directory (Authentication)
+    - Glue (Cataloging)
+    - Cassandra or ElasticSearch (NoSQL document store)
+    - MySQL (HCatalog) or DynamoDB (store metadata)
+    - Athena/Redshift (Analytics and Interactive Querying)
+    - ElasticSearch (Text search, logging, document store)
+    - CloudWatch (Monitoring)
+    - IAM Roles (Access Management)
+    - API Gateway (To expose Lambda microservices as external endpoints)
+    - Lambda (To build serverless microservices that trigger various events
+      through out the data lifecycle in the data lake. These lambda functions
+       interact with backend services like ElasticSearch and DynamoDB to
+       accomplish business objectives).
+    -
+
+
+2. What is a Data Lake?
+   - Not to be confused with a data swamp, a data lake is a datawarehouse in a world were the business needs are very different.
+     Such needs include dealing with data involving evolving schemas; high volume data where loading data is more important than transforming data.
+     The data governance aspect of data lakes prevent the lakes from becoming swamps.
+   - This kind of data platform adheres with the schema-on-read principle.
+
+3. Kafka
+    - Brokers: unit of computational work in Kafka cluster
+    - Topics
+    - Threads
+    - Replicas: for high availbility of topics
+    - Zookeeper: cluster coordinator
+    - Producers
+    - Consumers
+    - KafkaConnect: moving data in and out of Kafka cluster without using consumers or producers
+    - Kafka Streams and K SQL
+    - Performance: network threads, SSDs, etc
+    - Offsets
+    - Monitoring with JMX
+    - Partitioning: partition keys can be set for routing data to various partitions or shards
+    - Rebalancing
+    - Cluster Operations: decomissioning brokers, leader election, rebalancing, adding topics, increasing replication factor
+    - Integrations:
+       - Spark
+       - ElasticSearch
+
