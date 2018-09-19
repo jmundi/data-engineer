@@ -1,4 +1,4 @@
-$NEO4J_HOME/bin/neo4j-import
+$NEO4J_HOME/bin/
 --into /Users/zion/neo4j-3.3.3/data/yelp.db \
 --id-type string \
 --nodes:user /Users/zion/neo4j-3.3.3/import/users.csv \
@@ -7,3 +7,11 @@ $NEO4J_HOME/bin/neo4j-import
 
 --relationships:HAS_JOB /Users/zion/neo4j-3.3.3/import/users-jobs.csv \
 --relationships:LIVES_AT /Users/zion/neo4j-3.3.3/import/users-addresses.csv
+
+/home/ubuntu/neo4j-3.4.7/data/databases/graph.db
+
+ bin/neo4j-admin import --nodes import/movies.csv --nodes import/actors.csv --relationships import/roles.csv
+
+ curl -H accept:application/json -H content-type:application/json \
+  -d '{"statements":[{"statement":"MATCH (n) RETURN (n)"}]}' \
+  http://localhost:7474/db/data/transaction/commit'

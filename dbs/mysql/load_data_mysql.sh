@@ -10,7 +10,7 @@ create database test;
 
 show databases;
 
-mysqlimport  --ignore-lines=1 --fields-terminated-by=,--columns='username,password,age' --local -u root -p test data.csv
+mysqlimport  --ignore-lines=1 --fields-terminated-by=,--columns='username,password,age' --local -u root -p test users.csv
 
 
 bin/kafka-topics.sh --create  --zookeeper localhost:2181  --replication-factor 1 --partitions 1 --topic streams-wordcount-output --config cleanup.policy=compact
@@ -33,6 +33,10 @@ GRANT ALL ON *.* TO test@172.31.39.159 IDENTIFIED BY '123456';
 
 
 scp -i de.pem dbs/mysql ubuntu@ec2-18-221-117-22.us-east-2.compute.amazonaws.com:~/
+
+
+sudo echo 'deb http://debian.neo4j.org/repo stable/' > /etc/apt/sources.list.d/neo4j.list
+
 
 
 
